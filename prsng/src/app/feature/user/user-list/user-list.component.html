@@ -1,0 +1,64 @@
+<app-menu></app-menu>
+<div class='component-content'>
+  <div>
+    <div class='lefthalf'>
+      <span class='component-title'>{{ title }}</span>
+      <span>
+        <!-- <a routerLink='/user/create' *ngIf='SysSvc.data.user.instance.Admin'>
+          this needs to replace the line below to verify what the user can do -->
+          <a routerLink='/user/create'>
+          <img id='createnew' width='20' height='20' src='assets/add-new.png' title='Add New'>
+        </a>
+      </span>
+    </div>
+    <div class='righthalf input-group'>
+      <span class=''>Sort:</span>
+      <select [(ngModel)]='selectedSortKey' class='custom-select text-sm-left'>
+        <option *ngFor='let sortKey of sortKeys' value='{{sortKey}}'>{{sortKey}}</option>
+      </select>
+
+        <span>Order:</span>
+			  <select [(ngModel)]='sortDesc' class='custom-select text-sm-left'>
+				<option value='asc'>Asc</option>
+				<option value='desc'>Desc</option>
+			</select>
+    </div>
+
+  </div>
+</div>
+<div>
+  <table class="table table-sm" *ngIf='users'>
+    <tr>
+<!--      <td>Id</td>  -->
+      <td>User Name</td>
+<!--      <td>Password</td>   -->
+      <td>FirstName</td>
+      <td>Last Name</td>
+      <td>Phone</td>
+      <td>email</td>
+      <td>Reviewer</td>
+      <td>Action</td>
+    </tr>
+    <tr *ngFor="let user of users | sort:selectedSortKey:sortDesc"  ng-class-odd="'striped'">
+<!--       <td>{{ user.Id}}</td>  -->
+      <td>{{ user.UserName }}</td>
+<!--      <td>**********</td>    -->
+      <td>{{ user.FirstName }}</td>
+      <td>{{ user.LastName }}</td>
+      <td>{{ user.Phone }}</td>
+      <td>{{ user.Email }}</td>
+      <td>
+        {{ user.Admin ? 'Adm' : '' }} {{ user.Reviewer ? 'Rev' : '' }}
+      </td>
+      <td class='actions'>
+        <a routerLink='/user/detail/{{user.Id}}'>
+          <img src='assets/detail.png' title='Detail'>
+        </a>
+        <a routerLink='/user/edit/{{user.Id}}'>
+          <img src='assets/edit.png' title='Edit'>
+        </a>
+      </td>
+    </tr>
+  </table>
+
+</div>

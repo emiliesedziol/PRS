@@ -1,0 +1,25 @@
+<app-menu></app-menu>
+<div>
+</div><div class='component-content'>
+	<div>
+		<span class='component-title'>[{{title}}]</span>
+		 <span><a routerLink='/user/create'><img id='createnew' width='20' height='20' src='assets/add-new.png' title='Add New'></a></span>
+		| <span><a routerLink='/user/list'>Back to list</a></span>
+	</div>
+	<p *ngIf='undefined'>Loading ...</p>
+	<table class='table table-sm' *ngIf='user'>
+<!--		<tr><th>ID:</th><td>{{user.Id}}</td></tr>  -->
+		<tr><th>Name:</th><td>{{user.FirstName}} {{user.LastName}}</td></tr>
+		<tr><th>Username:</th><td>{{user.UserName}}</td></tr>
+		<tr><th>Password:</th><td>{{user.Password}}</td></tr>
+		<tr><th>Phone:</th><td>{{user.Phone}}</td></tr>
+		<tr><th>Email:</th><td>{{user.Email}}</td></tr>
+		<tr><th>Admin:</th><td>{{user.Admin ? 'Yes':'No'}}</td></tr>
+		<tr><th>Reviewer:</th><td>{{user.Reviewer ? 'Yes':'No'}}</td></tr>
+		<tr><th>Active:</th><td>{{user.Active ? 'Yes':'No'}}</td></tr>
+		<tr><td colspan="2">
+			<a routerLink='/user/edit/{{user.Id}}' class='btn btn-primary' title='Edit'>Edit {{user.UserName }}</a>
+			<button (click)="remove()" class='btn btn-danger' title='Delete'>Delete {{user.UserName}}</button>
+		</td></tr>
+	</table>
+</div>

@@ -1,0 +1,25 @@
+<app-menu></app-menu>
+<div>
+</div><div class='component-content'>
+	<div>
+		<span class='component-title'>[{{title}}]</span>
+		 <span><a routerLink='/vendor/create'><img id='createnew' width='20' height='20' src='assets/add-new.png' title='Add New'></a></span>
+		| <span><a routerLink='/vendor/list'>Back to list</a></span>
+	</div>
+	<p *ngIf='undefined'>Loading ...</p>
+	<table class='table table-sm' *ngIf='vendor'>
+<!--     <tr><th>ID:</th><td>{{vendor.Id}}</td></tr> -->
+    <tr><th>Code</th><td>{{ vendor.Code }}</td></tr>
+		<tr><th>Name</th><td>{{vendor.Name}}</td></tr>
+		<tr><th>Address</th><td>{{vendor.Address}}</td></tr>
+		<tr><th>City</th><td>{{vendor.City}}</td></tr>
+		<tr><th>State</th><td>{{vendor.State}}</td></tr>
+		<tr><th>Zip</th><td>{{vendor.Zip}}</td></tr>
+		<tr><th>Pre Approved</th><td>{{vendor.PreApproved ? 'Yes':'No'}}</td></tr>
+		<tr><th>Active</th><td>{{vendor.Active ? 'Yes':'No'}}</td></tr>
+		<tr><td colspan="2">
+			<a routerLink='/vendor/edit/{{vendor.Id}}' class='btn btn-primary' title='Edit'>Edit {{vendor.Name }}</a>
+			<button (click)="remove()" class='btn btn-danger' title='Delete'>Delete {{vendor.Name}}</button>
+		</td></tr>
+	</table>
+</div>

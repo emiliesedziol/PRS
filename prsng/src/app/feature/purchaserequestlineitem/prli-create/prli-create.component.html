@@ -1,0 +1,38 @@
+<app-menu></app-menu>
+<div class='component-content'>
+  <div>
+    <span class='component-title' *ngIf='purchaseRequest'>{{title}} - PR Id: {{ purchaseRequest.Description }}</span>
+    |
+    <span>
+      <a routerLink='/pr/lines'>Back to list</a>
+    </span>
+  </div>
+  <div>
+    <br>
+    <br>
+    <p *ngIf='!prli'>Loading</p>
+
+    <div *ngIf='prli'>
+
+      <div class='form-group row'>
+        <label class='col-form-label col-sm-2' for='prliproduct'>Product Name</label>
+        <div class='col-sm-6 select-list'>
+          <select [(ngModel)]='prli.ProductId' [compareWith]='compareFn' class='form-control' name='productId' id='prli-ProductId'>
+            <option *ngFor='let product of products' [ngValue]='product.Id' [selected]='product.Id == prli.ProductId'>{{ product.Name }} | {{ product.VendorName }} </option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class='form-group row'>
+        <label class='col-form-label col-sm-2' for='prliquantity'>Quantity</label>
+        <input [(ngModel)]='prli.Quantity' name='quantity' type='text' class='form-control col-sm-6' id='quantity' aria-describedby="quantityeHelp"
+          placeholder="quantity">
+        <small id="quantityeHelp" class="form-text text-muted col-sm-2">quantity</small>
+      </div>
+
+      <div class='form-group'>
+        <button (click)='create()' class='btn btn-primary'>Add</button>
+      </div>
+    </div>
+  </div>

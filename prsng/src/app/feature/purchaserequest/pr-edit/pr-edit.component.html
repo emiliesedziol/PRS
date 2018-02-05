@@ -1,0 +1,59 @@
+<app-menu></app-menu>
+<div>
+</div><div class='component-content'>
+	<div>
+		<span class='component-title'>[{{title}}]</span>
+		 <span><a routerLink='/pr/create'><img id='createnew' width='20' height='20' src='assets/add-new.png' title='Add New'></a></span>
+		| <span><a routerLink='/pr/list'>Back to list</a></span>
+  </div>
+
+ <!-- <p *ngIf='!purchaserequest'>Loading</p>  -->
+ <br>
+  <div *ngIf='pruchaserequest'>
+    <div class='form-group row'>
+      <label class='col-form-label col-sm-2' for='pruchaserequestid'>Id</label>
+      <input [(ngModel)]='pruchaserequest.Id' name='Id' type='text' class='form-control col-sm-6' id='pruchaserequestid' aria-describedby="ideHelp" placeholder="Id">
+      <small id="IdeHelp" class="form-text text-muted col-sm-2">Id</small>
+    </div>
+
+    <div class='form-group row'>
+      <label class='col-form-label col-sm-2' for='pruchaserequestuserid'>User Id</label>
+      <input [(ngModel)]='pruchaserequest.UserId' name='userid' type='text' class='form-control col-sm-6' id='pruchaserequestuserid' aria-describedby="userideHelp" placeholder="User Id">
+      <small id="userideHelp" class="form-text text-muted col-sm-2">User Id</small>
+    </div>
+    <div class='form-group row'>
+      <label class='col-form-label col-sm-2' for='pruchaserequestdescription'>Description</label>
+      <input [(ngModel)]='pruchaserequest.Description' name='description' type='text' class='form-control col-sm-6' id='description' aria-describedby="descriptioneHelp" placeholder="description">
+      <small id="descriptioneHelp" class="form-text text-muted col-sm-2">Description</small>
+    </div>
+    <div class='form-group row'>
+      <label class='col-form-label col-sm-2' for='pruchaserequestjustification'>Justification</label>
+      <input [(ngModel)]='pruchaserequest.Justification' name='Justification' type='text' class='form-control col-sm-6' id='justification' aria-describedby="justificationeHelp" placeholder="Justification">
+      <small id="justificationeHelp" class="form-text text-muted col-sm-2">Justification</small>
+    </div>
+    <div class='form-group row'>
+      <label class='col-form-label col-sm-2' for='pruchaserequestdateneeded'>Date Needed</label>
+      <input [(ngModel)]='pruchaserequest.DateNeeded' name='DateNeeded' type='text' class='form-control col-sm-6' id='dateneeded' aria-describedby="dateneededeHelp" placeholder="DataNeeded">
+      <small id="dateneededeHelp" class="form-text text-muted col-sm-2">Date Needed</small>
+    </div>
+    <div class='form-group row'>
+        <label class='col-form-label col-sm-2' for='pruchaserequestdeliverymode'>Delivery Mode</label>
+        <input [(ngModel)]='pruchaserequest.DeliveryMode' name='DeliveryMode' type='text' class='form-control col-sm-6' id='deliverymode' aria-describedby="deliverymodeeHelp" placeholder="deliverymode">
+        <small id="deliverymodeeHelp" class="form-text text-muted col-sm-2">Deliver Mode</small>
+      </div>
+      <div class='form-group row'>
+          <label class='col-form-label col-sm-2' for='pruchaserequeststatusid'>Status Id</label>
+          <input [(ngModel)]='pruchaserequest.StatusId' name='Statusid' type='text' class='form-control col-sm-6' id='statudid' aria-describedby="statusideHelp" placeholder="Statusid">
+          <small id="statusideHelp" class="form-text text-muted col-sm-2">Statud Id</small>
+        </div>
+        <div class='form-group row'>
+            <label class='col-form-label col-sm-2' for='pruchaserequesttotal'>Total</label>
+            <input [(ngModel)]='pruchaserequest.Total' name='Total' type='text' class='form-control col-sm-6' id='Total' aria-describedby="totaleHelp" placeholder="Total">
+            <small id="totaleHelp" class="form-text text-muted col-sm-2">Total                                                                                                                        </small>
+          </div>
+
+    <div class='form-group'>
+        <button (click)='update()' class='btn btn-primary'>Update</button>
+    </div>
+
+</div>

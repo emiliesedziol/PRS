@@ -1,0 +1,9 @@
+<h1>Purchase Request</h1>
+<nav>
+  <ul>
+    <li *ngFor='let menu of menuItems' title='{{menu.tooltip}}'>
+      <a routerLink='{{menu.href}}'> {{menu.display}}</a>
+    </li>
+  </ul>
+</nav>
+

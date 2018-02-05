@@ -1,0 +1,55 @@
+<app-menu></app-menu>
+<div class='component-content'>
+    <div>
+      <div class='lefthalf'>
+        <span class='component-title'>{{ title }}</span>
+        <span>
+          <a routerLink='/product/create'>
+            <img id='createnew' width='20' height='20' src='assets/add-new.png' title='Add New'>
+          </a>
+        </span>
+      </div>
+      <div class='righthalf input-group'>
+        <span class=''>Sort:</span>
+        <select [(ngModel)]='selectedSortKey' class='custom-select text-sm-left'>
+          <option *ngFor='let sortKey of sortKeys' value='{{sortKey}}'>{{sortKey}}</option>
+        </select>
+
+        <span>Order:</span>
+			  <select [(ngModel)]='sortDesc' class='custom-select text-sm-left'>
+				<option value='asc'>Asc</option>
+				<option value='desc'>Desc</option>
+      </select>
+
+      </div>
+    </div>
+  </div>
+<div>
+    <table class="table table-sm" *ngIf='products'>
+      <tr>
+        <td>Id</td>
+        <td>PartNumber</td>
+        <td>Name</td>
+        <td>Unit</td>
+        <td>Price</td>
+        <td>VendorId</td>
+      </tr>
+      <tr *ngFor="let product of products | sort:selectedSortKey:sortDesc">
+        <td>{{ product.Id}}</td>
+        <td>{{ product.PartNumber }}</td>
+        <td>{{ product.Name }}</td>
+        <td>{{ product.Unit }}</td>
+        <td>{{product.Price }}</td>
+        <td>{{product.VendorId }}</td>
+        <td class='actions'>
+          <a routerLink='/product/detail/{{product.Id}}'>
+            <img src='assets/detail.png' title='Detail'>
+          </a>
+          <a routerLink='/product/edit/{{product.Id}}'>
+            <img src='assets/edit.png' title='Edit'>
+          </a>
+        </td>
+      </tr>
+    </table>
+
+  </div>

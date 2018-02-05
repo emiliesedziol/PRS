@@ -1,0 +1,26 @@
+<app-menu></app-menu>
+<div>
+</div><div class='component-content'>
+	<div>
+		<span class='component-title'>[{{title}}]</span>
+		 <span><a routerLink='/pr/create'><img id='createnew' width='20' height='20' src='assets/add-new.png' title='Add New'></a></span>
+		| <span><a routerLink='/pr/list'>Back to list</a></span>
+	</div>
+	<p *ngIf='undefined'>Loading ...</p>
+	<table class='table table-sm' *ngIf='purchaserequest'>
+    <tr><th>ID</th><td>{{purchaserequest.Id}}</td></tr>
+    <tr><th>User Id</th><td>{{ purchaserequest.UserId }}</td></tr>
+		<tr><th>Description</th><td>{{ purchaserequest.Description }}</td></tr>
+		<tr><th>Justification</th><td>{{ purchaserequest.Justification }}</td></tr>
+		<tr><th>Date Needed</th><td>{{ purchaserequest.DateNeeded | date:'yyyy-mm-dd' }}</td></tr>
+		<tr><th>Delivery Mode</th><td>{{ purchaserequest.DeliveryMode }}</td></tr>
+    <tr><th>Status Id</th><td>{{ purchaserequest.StatusId }}</td></tr>
+    <tr><th>Total</th><td>{{ purchaserequest.Total }}</td></tr>
+    <tr><th>Reason for Rejection</th><td>{{ purchaserequest.ReasonForRejection }}</td></tr>
+		<tr><th>Active</th><td>{{purchaserequest.Active ? 'Yes':'No'}}</td></tr>
+		<tr><td colspan="2">
+			<a routerLink='/pr/edit/{{purchaserequest.Id}}' class='btn btn-primary' title='Edit'>Edit</a>
+<!--			<button (click)="remove()" class='btn btn-danger' title='Delete'>Delete</button>  -->
+		</td></tr>
+	</table>
+</div>

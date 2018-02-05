@@ -1,0 +1,39 @@
+nav {
+    width: 100%;
+    background-color: darkblue;
+    font-weight: bold;
+}
+
+ul {
+    padding: 10;
+    margin: 10;
+    height: 30px;
+}
+
+li {
+    display: inline-block;
+    text-align: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-family: Courier New, Courier, monospace;
+}
+
+a:hover{
+    background-color: lightskyblue;
+    color: black;
+    font-weight: 1600px;
+    font-family: Courier New, Courier, monospace;
+
+}
+
+h1 {
+  text-align: center;
+  color: rgb(6, 6, 117);
+  background-color: yellow;
+  font-family: Courier New, Courier, monospace;
+  font-weight: bold;
+}

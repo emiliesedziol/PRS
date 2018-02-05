@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+.lefthalf {
+  display: inline-block;
+  width: 49%;
+  text-align: left;
+}
+
+.righthalf {
+  display: inline-block;
+  width: 49%;
+  text-align: right;
+}
+
+.component-title {
+  background-color: yellow;
+}
+
+label {
+  text-align: center;
+}
