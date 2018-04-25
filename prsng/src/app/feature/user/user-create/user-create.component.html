@@ -10,28 +10,28 @@
   <div *ngIf='user'>
     <div class='form-group row'>
       <label class='col-form-label col-sm-2' for='userfirstname'>First name:</label>
-      <input [(ngModel)]='user.FirstName' name='FirstName' type='text' class='form-control col-sm-6' id='userfirstname' aria-describedby="firstnameHelp" placeholder="First Name">
+      <input [(ngModel)]='user.FirstName' name='FirstName' type='text' class='form-control col-sm-6' id='userfirstname' aria-describedby="firstnameHelp" placeholder="First Name" required>
       <small id="firstnameHelp" class="form-text text-muted col-sm-2">First Name</small>
     </div>
     <div class='form-group row'>
       <label class='col-form-label col-sm-2' for='userlastname'>Last name:</label>
-      <input [(ngModel)]='user.LastName' name='LastName' type='text' class='form-control col-sm-6' id='userlastname' aria-describedby="lastnameHelp" placeholder="Last Name">
+      <input [(ngModel)]='user.LastName' name='LastName' type='text' class='form-control col-sm-6' id='userlastname' aria-describedby="lastnameHelp" placeholder="Last Name" required>
       <small id="lastnameHelp" class="form-text text-muted col-sm-2">Last Name</small>
     </div>
     <div class='form-group row'>
       <label class='col-form-label col-sm-2' for='userusername'>user name:</label>
 
-<input [(ngModel)]='user.UserName' name='UserName' type='text' class='form-control col-sm-6' id='userusername' aria-describedby="usernameHelp" placeholder="User Name">
+<input [(ngModel)]='user.UserName' name='UserName' type='text' class='form-control col-sm-6' id='userusername' aria-describedby="usernameHelp" placeholder="User Name" required>
       <small id="usernameHelp" class="form-text text-muted col-sm-2">UserName</small>
     </div>
     <div class='form-group row'>
       <label class='col-form-label col-sm-2' for='userphone'>Phone:</label>
-      <input [(ngModel)]='user.Phone' name='Phone' type='text' class='form-control col-sm-6' id='phone' aria-describedby="phoneHelp" placeholder="Phone">
+      <input [(ngModel)]='user.Phone' name='Phone' type='text' class='form-control col-sm-6' id='phone' aria-describedby="phoneHelp" placeholder="Phone" required>
       <small id="phoneHelp" class="form-text text-muted col-sm-2">Phone</small>
     </div>
     <div class='form-group row'>
       <label class='col-form-label col-sm-2' for='useremail'>Email:</label>
-      <input [(ngModel)]='user.Email' name='Email' type='text' class='form-control col-sm-6' id='email' aria-describedby="emaileHelp" placeholder="Email">
+      <input [(ngModel)]='user.Email' name='Email' type='text' class='form-control col-sm-6' id='email' aria-describedby="emaileHelp" placeholder="Email" required>
       <small id="emailHelp" class="form-text text-muted col-sm-2">Email</small>
     </div>
     <div class='form-group row'>
