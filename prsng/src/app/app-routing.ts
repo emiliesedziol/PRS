@@ -20,6 +20,7 @@ import { VendorEditComponent } from './feature/vendor/vendor-edit/vendor-edit.co
 import { VendorCreateComponent } from './feature/vendor/vendor-create/vendor-create.component';
 
 import { PRListComponent } from './feature/purchaserequest/pr-list/pr-list.component';
+import { PrListforuserComponent } from './feature/purchaserequest/pr-listforuser/pr-listforuser.component';
 import { PRDetailComponent } from './feature/purchaserequest/pr-detail/pr-detail.component';
 import { PREditComponent } from './feature/purchaserequest/pr-edit/pr-edit.component';
 import { PRCreateComponent } from './feature/purchaserequest/pr-create/pr-create.component';
@@ -36,6 +37,7 @@ const routes: Routes = [
     { path: 'pr/create', component: PRCreateComponent },
     { path: 'pr/lines/:id', component: PrLinesComponent },
     { path: 'pr/list', component: PRListComponent },
+    { path: 'pr/listUserPR/:id', component: PrListforuserComponent },
     { path: 'prli/detail/:id/:prid', component: PrliDetailComponent },
     { path: 'prli/create/:id', component: PrliCreateComponent },
     { path: 'prli/edit/:id/:prid', component: PrliEditComponent },
@@ -52,7 +54,7 @@ const routes: Routes = [
     { path: 'vendor/edit/:id', component: VendorEditComponent },
     { path: 'vendor/create', component: VendorCreateComponent },
     { path: 'vendor/list', component: VendorListComponent },
-    { path: 'home', component: UserListComponent },
+    { path: 'home', component: UserLoginComponent },
     { path: '**', component: HomeComponent }
 
 ];

@@ -51,6 +51,7 @@ public class PurchaseRequestController extends BaseController {
 		return allPRs;
 	}
 	
+	
 	@PostMapping(path="/Add")
 	public @ResponseBody PRSMaintenanceReturn addNewPurchaseRequest (@RequestBody PurchaseRequest purchaseRequest) {
 		Timestamp ts = new Timestamp(System.currentTimeMillis());
@@ -97,5 +98,17 @@ public class PurchaseRequestController extends BaseController {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+/*	public @ List<PurchaseRequest> findByUserId(int id) {
+		
+		Iterable<PurchaseRequest> userPRs = purchaserequestRepository.findAll();
+		return PRSMaintenanceReturn.getMaintReturn(purchaseRequest);
+	}*/
 
+	@GetMapping(path="/ListUserPR")
+	public @ResponseBody Iterable<PurchaseRequest> findByUserId(@RequestParam int id) {
+		// This returns a JSON or XML with the purchaserequests
+		Iterable<PurchaseRequest> userPR = purchaserequestRepository.findByUserId(id);
+		return userPR;
+	}
 }

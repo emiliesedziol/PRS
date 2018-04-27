@@ -8,5 +8,5 @@ public interface PurchaseRequestRepository extends CrudRepository<PurchaseReques
 
 	List<PurchaseRequest> findByUserIdNot(int userId);
 
-
+	List<PurchaseRequest> findByUserId(int userId);
 }

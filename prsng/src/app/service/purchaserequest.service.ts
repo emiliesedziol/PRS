@@ -20,6 +20,10 @@ export class PurchaseRequestService {
     return this.http.get(url + 'Get?id=' + id) as Observable<PurchaseRequest[]>;
   }
 
+  userpr(id): Observable<PurchaseRequest[]> {
+     return this.http.get(url + 'ListUserPR?id=' + id) as Observable<PurchaseRequest[]>;
+   }
+
   prlist(id): Observable<PurchaseRequest[]> {
     // http://localhost:8080/PR/PRList?id=1
     return this.http.get(url + 'PRList?id=' + id) as Observable<PurchaseRequest[]>;
