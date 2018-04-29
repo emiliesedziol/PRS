@@ -31,7 +31,7 @@ import { PrliDetailComponent } from './feature/purchaserequestlineitem/prli-deta
 import { PrliCreateComponent } from './feature/purchaserequestlineitem/prli-create/prli-create.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: '', redirectTo: 'user/login', pathMatch: 'full' },
     { path: 'pr/detail/:id', component: PRDetailComponent },
     { path: 'pr/edit/:id', component: PREditComponent },
     { path: 'pr/create', component: PRCreateComponent },
@@ -55,7 +55,7 @@ const routes: Routes = [
     { path: 'vendor/create', component: VendorCreateComponent },
     { path: 'vendor/list', component: VendorListComponent },
     { path: 'home', component: UserLoginComponent },
-    { path: '**', component: HomeComponent }
+    { path: '**', component: UserLoginComponent }
 
 ];
 

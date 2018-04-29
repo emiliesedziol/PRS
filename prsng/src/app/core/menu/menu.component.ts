@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Menu } from './menu';
+import { SystemService } from '../../service/system.service';
 
 @Component({
   selector: 'app-menu',
@@ -15,8 +16,6 @@ export class MenuComponent {
     new Menu('Product', '/product/list', 'List of Products'),
     new Menu('Login', '/user/login', 'login')
   ];
-  constructor() { }
-
-
+  constructor(private SysSvc: SystemService) { }
 
 }

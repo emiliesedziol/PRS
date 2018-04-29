@@ -1,10 +1,71 @@
-<p>
-  pr-listforuser works!
-</p>
+<app-menu></app-menu>
 <div class='component-content'>
   <div>
     <div class='lefthalf'>
-      <span class='component-title'>{{ title }} {{ UserName }}</span>
+      <span class='component-title'>{{ title }}</span>
+      <span>
+        <a routerLink='/pr/create'>
+          <img id='createnew' width='20' height='20' src='assets/add-new.png' title='Add New'>
+        </a>
+      </span>
+    </div>
+    <div class='righthalf input-group'>
+      <span class=''>Sort:</span>
+      <select [(ngModel)]='selectedSortKey' class='custom-select text-sm-left'>
+        <option *ngFor='let sortKey of sortKeys' value='{{sortKey}}'>{{sortKey}}</option>
+        </select>
+
+        <span>Order:</span>
+			  <select [(ngModel)]='sortDesc' class='custom-select text-sm-left'>
+				<option value='asc'>Asc</option>
+				<option value='desc'>Desc</option>
+      </select>
+
     </div>
   </div>
+</div>
+<div>
+  <table class="table table-sm" *ngIf='purchaserequests'>
+    <tr>
+<!--      <td>Id</td>   -->
+      <td>Description</td>
+      <td>Justification</td>
+      <!-- <td>User</td> -->
+      <td>Date Needed</td>
+      <td>Delivery Mode</td>
+      <td>Status Id</td>
+      <td>Total</td>
+      <td>Submitted Date</td>
+<!--     <td>Reason for Rejection</td>
+      <td>Active</td> -->
+    </tr>
+    <tr *ngFor="let pr of purchaserequests | sort:selectedSortKey:sortDesc">
+<!--      <td>{{ pr.Id}}</td>  -->
+      <td>{{ pr.Description }}</td>
+      <td>{{ pr.Justification }}</td>
+      <!-- <td>{{ pr.UserName }}</td> -->
+      <td>{{ pr.DateNeeded | date:'yyyy-mm-dd' }}</td>
+      <td>{{ pr.DeliveryMode }}</td>
+      <td>{{ pr.StatusDesc }}</td>
+      <td>{{ pr.Total }}</td>
+      <td>{{ pr.SubmittedDate | date:'yyyy-mm-dd' }}</td>
+<!--      <td>{{ pr.ReasonForRejection }}</td>
+
+      <td>
+        {{ pr.Active ? 'Yes' : 'No' }}
+      </td> -->
+      <td class='actions'>
+        <a routerLink='/pr/detail/{{ pr.Id }}'>
+          <img src='assets/detail.png' title='Detail'>
+        </a>
+        <a routerLink='/pr/edit/{{ pr.Id }}'>
+          <img src='assets/edit.png' title='Edit'>
+        </a>
+        <a routerLink='/pr/lines/{{ pr.Id }} '>
+          <img src='assets/lines.png' title='Line'>
+        </a>
+      </td>
+    </tr>
+  </table>
+
 </div>
